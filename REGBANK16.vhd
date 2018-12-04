@@ -31,7 +31,8 @@ begin
 		end if;
 	end process;
 	
-	
+	-- ARRAYREG(0) <= "0000000000000101";
+	-- ARRAYREG(1) <= "0000000000000011";
 	ReadData1 <= ARRAYREG(conv_integer(unsigned(ReadReg1))); 
 	ReadData2 <= ARRAYREG(conv_integer(unsigned(ReadReg2)));
 

@@ -1,14 +1,14 @@
-Analysis & Synthesis Status : Successful - Tue Dec 04 02:58:10 2018
+Analysis & Synthesis Status : Successful - Tue Dec 04 18:09:25 2018
 Quartus Prime Version : 17.0.0 Build 595 04/25/2017 SJ Lite Edition
 Revision Name : Titanic2
-Top-level Entity Name : PC
+Top-level Entity Name : Titanic2
 Family : Arria II GX
 Logic utilization : N/A
     Combinational ALUTs : 0
     Memory ALUTs : 0
     Dedicated logic registers : 0
 Total registers : 0
-Total pins : 32
+Total pins : 95
 Total virtual pins : 0
 Total block memory bits : 0
 DSP block 18-bit elements : 0

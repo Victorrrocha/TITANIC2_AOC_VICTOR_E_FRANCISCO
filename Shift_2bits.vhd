@@ -4,9 +4,9 @@ USE ieee.std_logic_1164.all;
 ENTITY Shift_2bits IS
 PORT (
 
-	a    : IN  std_ulogic_vector(15 downto 0);
-	cin  : in std_logic;
-	x    : OUT std_ulogic_vector(15 downto 0) 
+	a    : IN  std_logic_vector(15 downto 0);
+	cin  : in  std_logic;
+	x    : OUT std_logic_vector(15 downto 0) 
 );
 END Shift_2bits;
 

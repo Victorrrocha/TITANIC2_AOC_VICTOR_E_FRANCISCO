@@ -4,14 +4,14 @@ use ieee.std_logic_1164.all;
 entity multiplexer_4op is
 	port (
 	
-		a, b, c  : in  std_ulogic_vector(15 downto 0);
-		selector    : in  std_ulogic_vector(1 downto 0);
-		x           : out std_ulogic_vector(15 downto 0)
+		a, b, c     : in  std_logic_vector(15 downto 0);
+		selector    : in  std_logic_vector( 1 downto 0);
+		x           : out std_logic_vector(15 downto 0)
 	);
 end multiplexer_4op;
 
 architecture implements of multiplexer_4op is 
-	signal d: std_ulogic_vector(15 downto 0);
+	signal d: std_logic_vector(15 downto 0);
 begin 
 
 	with selector select

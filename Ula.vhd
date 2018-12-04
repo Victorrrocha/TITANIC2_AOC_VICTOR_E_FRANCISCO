@@ -4,9 +4,10 @@ use ieee.std_logic_1164.all;
 entity Ula is
 	port (
 	
-		a, b  : in  std_ulogic_vector(15 downto 0);
-		op    : in  std_ulogic_vector( 7 downto 0);
-		s     : out std_ulogic_vector(15 downto 0)
+		a, b  : in  std_logic_vector(15 downto 0);
+		op    : in  std_logic_vector( 7 downto 0);
+		s     : out std_logic_vector(15 downto 0);
+		zeroo  : inout std_logic
 		
 	);
 end Ula;
@@ -15,30 +16,40 @@ architecture implements of Ula is
 	component multiplexer_4op 
 	port (
 	
-		a, b, c  : in  std_ulogic_vector(15 downto 0);
-		selector : in  std_ulogic_vector( 1 downto 0);
-		x        : out std_ulogic_vector(15 downto 0)
+		a, b, c  : in  std_logic_vector(15 downto 0);
+		selector : in  std_logic_vector( 1 downto 0);
+		x        : out std_logic_vector(15 downto 0)
 	);
 end component;
 
 component SOMA16BITS
 port(
-	A, B	: in 	std_ulogic_vector(15 downto 0);
-	sum	: out std_ulogic_vector(15 downto 0)
+	A, B	: in 	std_logic_vector(15 downto 0);
+	sum	: out std_logic_vector(15 downto 0)
 );
 end component;
+
+component multiplica IS
+PORT (
+
+	a    : IN     std_logic_vector(15 downto 0);
+	b    : IN     std_logic_vector(15 downto 0);
+	x    : OUT    std_logic_vector(15 downto 0) 
+);
+END component;
+
 component Qand 
 PORT (
 
-	a, b : IN  std_ulogic_vector(15 downto 0);
-	x    : OUT std_ulogic_vector(15 downto 0) 
+	a, b : IN  std_logic_vector(15 downto 0);
+	x    : OUT std_logic_vector(15 downto 0) 
 );
 END component;
 component Qor 
 PORT (
 
-	a, b : IN  std_ulogic_vector(15 downto 0);
-	x    : OUT std_ulogic_vector(15 downto 0) 
+	a, b : IN  std_logic_vector(15 downto 0);
+	x    : OUT std_logic_vector(15 downto 0) 
 
 );
 END component;
@@ -46,8 +57,8 @@ END component;
 component Qxor 
 PORT (
 
-	a, b : IN  std_ulogic_vector(15 downto 0);
-	x    : OUT std_ulogic_vector(15 downto 0)
+	a, b : IN  std_logic_vector(15 downto 0);
+	x    : OUT std_logic_vector(15 downto 0)
 
 );
 END component;
@@ -57,25 +68,34 @@ END component;
 component Shift_2bits
 PORT (
 
-	a    : IN  std_ulogic_vector(15 downto 0);
+	a    : IN  std_logic_vector(15 downto 0);
 	cin  : in std_logic;
-	x    : OUT std_ulogic_vector(15 downto 0) 
+	x    : OUT std_logic_vector(15 downto 0) 
 );
 END component;
 
 component Multiplexer_5pos 
 PORT (
 
-	a, b, c, d, e  : IN  std_ulogic_vector(15 downto 0);
-	seletor        : IN  std_ulogic_vector( 2 downto 0);
-	x              : OUT std_ulogic_vector(15 downto 0)
+	a, b, c, d, e, f  : IN  std_logic_vector(15 downto 0);
+	seletor        : IN  std_logic_vector( 2 downto 0);
+	x              : OUT std_logic_vector(15 downto 0)
 
 );
 END component;
 
+component zero IS
+PORT (
+
+	a  : IN  std_logic_vector(15 downto 0);
+	cin: IN std_logic;
+	x  : INOUT std_logic 
+);
+END component;
+
 -- co => complemento de dois
- SIGNAL notA, notB, co, aa, ab, ba, bb, bc, bd, be : std_ulogic_vector(15 downto 0);
- SIGNAL lixo02 : std_ulogic;
+ SIGNAL notA, notB, co, aa, ab, ba, bb, bc, bd, be, bf : std_logic_vector(15 downto 0);
+ SIGNAL lixo02 : std_logic;
 begin 
 	notA <= not a;
 	notB <= not b;
@@ -91,6 +111,10 @@ begin
 	-- UC deverar seta '0' em Carry in.. Para fucnionar o Xor
 	Somador_16bits: SOMA16BITS port map(aa, ab, bc);
 	
-	Multiplexer_03: multiplexer_5pos port map(ba, bb, bc, bd, be, op(2 downto 0), s);
+	MULTIPLICACAO: multiplica port map(aa,ab,bf);
+	
+	ZERO0: zero port map (bc,op(7),zeroo);
+	
+	Multiplexer_03: multiplexer_5pos port map(ba, bb, bc, bd, be, bf, op(2 downto 0), s);
 	
 end implements;

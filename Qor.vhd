@@ -4,8 +4,8 @@ USE ieee.std_logic_1164.all;
 ENTITY Qor IS
 PORT (
 
-	a, b : IN  std_ulogic_vector(15 downto 0);
-	x    : OUT std_ulogic_vector(15 downto 0)
+	a, b : IN  std_logic_vector(15 downto 0);
+	x    : OUT std_logic_vector(15 downto 0)
 
 );
 END Qor;

@@ -7,7 +7,7 @@ Note: if both ModelSim-Altera and ModelSim executables are available, ModelSim-A
 
 **** Generating the ModelSim Testbench ****
 
-quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Titanic2 -c Titanic2 --vector_source="C:/Users/Victor/Documents/Titanic2/Waveform.vwf" --testbench_file="C:/Users/Victor/Documents/Titanic2/simulation/qsim/Waveform.vwf.vht"
+quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Titanic2 -c Titanic2 --vector_source="C:/Users/Victor/Documents/Titanic2/Waveform27.vwf" --testbench_file="C:/Users/Victor/Documents/Titanic2/simulation/qsim/Waveform27.vwf.vht"
 
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
@@ -26,10 +26,16 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Dec 03 17:10:48 2018
-Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Titanic2 -c Titanic2 --vector_source=C:/Users/Victor/Documents/Titanic2/Waveform.vwf --testbench_file=C:/Users/Victor/Documents/Titanic2/simulation/qsim/Waveform.vwf.vht
+    Info: Processing started: Tue Dec 04 18:09:52 2018
+Info: Command: quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off Titanic2 -c Titanic2 --vector_source=C:/Users/Victor/Documents/Titanic2/Waveform27.vwf --testbench_file=C:/Users/Victor/Documents/Titanic2/simulation/qsim/Waveform27.vwf.vht
 Info (119004): Automatically selected device EP2AGX45CU17I3 for design Titanic2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (201002): Generated VHDL Test Bench File C:/Users/Victor/Documents/Titanic2/simulation/qsim/Waveform27.vwf.vht for simulation
+Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 4735 megabytes
+    Info: Processing ended: Tue Dec 04 18:09:53 2018
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
 
 Completed successfully. 
 
@@ -54,14 +60,14 @@ Info: Running Quartus Prime EDA Netlist Writer
     Info: devices manufactured by Intel and sold by Intel or its 
     Info: authorized distributors.  Please refer to the applicable 
     Info: agreement for further details.
-    Info: Processing started: Mon Dec 03 17:10:50 2018
+    Info: Processing started: Tue Dec 04 18:09:54 2018
 Info: Command: quartus_eda --write_settings_files=off --simulation=on --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory=C:/Users/Victor/Documents/Titanic2/simulation/qsim/ Titanic2 -c Titanic2
 Info (119004): Automatically selected device EP2AGX45CU17I3 for design Titanic2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file Titanic2.vho in folder "C:/Users/Victor/Documents/Titanic2/simulation/qsim//" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4739 megabytes
-    Info: Processing ended: Mon Dec 03 17:10:51 2018
+    Info: Peak virtual memory: 4741 megabytes
+    Info: Processing ended: Tue Dec 04 18:09:55 2018
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 
@@ -83,10 +89,10 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 
 
 # do Titanic2.do
-# ** Warning: (vlib-34) Library already exists at "work".
 
+# ** Warning: (vlib-34) Library already exists at "work".
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:10:52 on Dec 03,2018
+# Start time: 18:09:56 on Dec 04,2018
 # vcom -work work Titanic2.vho 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -95,53 +101,56 @@ Reading C:/intelFPGA_lite/17.0/modelsim_ase/tcl/vsim/pref.tcl
 # -- Loading package VITAL_Primitives
 # -- Loading package arriaii_atom_pack
 # -- Loading package arriaii_components
-# -- Compiling entity PC
-# -- Compiling architecture structure of PC
+# -- Compiling entity Titanic2
+# -- Compiling architecture structure of Titanic2
 
-# End time: 17:10:52 on Dec 03,2018, Elapsed time: 0:00:00
+# End time: 18:09:56 on Dec 04,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
+
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 17:10:52 on Dec 03,2018
-# vcom -work work Waveform.vwf.vht 
+# Start time: 18:09:56 on Dec 04,2018
+# vcom -work work Waveform27.vwf.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
-# -- Compiling entity PC_vhd_vec_tst
-# -- Compiling architecture PC_arch of PC_vhd_vec_tst
+# -- Compiling entity Titanic2_vhd_vec_tst
+# -- Compiling architecture Titanic2_arch of Titanic2_vhd_vec_tst
 
-# End time: 17:10:52 on Dec 03,2018, Elapsed time: 0:00:00
+# End time: 18:09:57 on Dec 04,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 
-# vsim -novopt -c -t 1ps -L arriaii -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.PC_vhd_vec_tst 
-# Start time: 17:10:52 on Dec 03,2018
+# vsim -novopt -c -t 1ps -L arriaii -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.Titanic2_vhd_vec_tst 
+# Start time: 18:09:57 on Dec 04,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
-# Loading work.pc_vhd_vec_tst(pc_arch)
+# Loading work.titanic2_vhd_vec_tst(titanic2_arch)
 # Loading ieee.vital_timing(body)
 # Loading ieee.vital_primitives(body)
 # Loading arriaii.arriaii_atom_pack(body)
 # Loading arriaii.arriaii_components
-# Loading work.pc(structure)
+# Loading work.titanic2(structure)
 # Loading ieee.std_logic_arith(body)
 # Loading arriaii.arriaii_io_obuf(arch)
 # Loading arriaii.arriaii_io_ibuf(arch)
+# ** Warning: Design size of 12088 statements exceeds ModelSim-Intel FPGA Starter Edition recommended capacity.
+# Expect performance to be adversely affected.
 # after#31
 
-# End time: 17:10:53 on Dec 03,2018, Elapsed time: 0:00:01
-# Errors: 0, Warnings: 0
+# End time: 18:09:57 on Dec 04,2018, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 1
 
 Completed successfully. 
 
 **** Converting ModelSim VCD to vector waveform ****
 
-Reading C:/Users/Victor/Documents/Titanic2/Waveform.vwf...
+Reading C:/Users/Victor/Documents/Titanic2/Waveform27.vwf...
 
 Reading C:/Users/Victor/Documents/Titanic2/simulation/qsim/Titanic2.msim.vcd...
 
 Processing channel transitions... 
 
-Writing the resulting VWF to C:/Users/Victor/Documents/Titanic2/simulation/qsim/Titanic2_20181203171053.sim.vwf
+Writing the resulting VWF to C:/Users/Victor/Documents/Titanic2/simulation/qsim/Titanic2_20181204180957.sim.vwf
 
 Finished VCD to VWF conversion.
 

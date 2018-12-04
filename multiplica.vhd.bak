@@ -1,0 +1,18 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_arith.all;
+
+ENTITY multiplica IS
+PORT (
+
+	a, b : IN  std_logic_vector(15 downto 0);
+	x    : OUT std_logic_vector(31 downto 0) 
+);
+END multiplica;
+
+ARCHITECTURE implements OF multiplica IS
+BEGIN 
+
+	x <= a * b;
+
+END implements;
