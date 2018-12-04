@@ -1,0 +1,23 @@
+LIBRARY IEEE;
+USE IEEE.STD_LOGIC_1164.ALL;
+use IEEE.std_logic_arith.ALL;
+
+entity BranchEq is 
+port(
+	A, B	: in 	std_logic_vector(15 downto 0);
+	zero 	: out	std_logic;
+);
+end entity BranchEq;
+
+architecture adder_bh of BranchEq is
+	SIGNAL temp : std_ulogic_vector(15 downto 0);
+begin 
+	
+	temp <= A - B;
+	if temp = "0000000000000000" then
+		zero <= '1';
+	else
+		zero <= '0';
+	end if;
+	
+end adder_bh;
