@@ -143,6 +143,13 @@ COMPONENT extensor is
 	);
 end COMPONENT;
 
+COMPONENT AND_1 is
+	port (
+		a, b  		: in  std_logic;
+		output      : out std_logic
+	);
+end COMPONENT;
+
 COMPONENT Ula is
 	port (
 	
@@ -181,6 +188,8 @@ signal resUla : std_logic_vector(15 downto 0);
 signal dadoLido : std_logic_vector(15 downto 0);
 -- multiplexador depois da memória de dados
 signal resMux_2 : std_logic_vector(15 downto 0);
+-- saída do AND_desvio
+signal faz_desvio : std_logic;
 
 BEGIN
 
@@ -202,6 +211,10 @@ UNIDADE_LOGICA_ARITMETICA : Ula PORT MAP(reg1, resMux_1, ula_opcode, sinal_zero,
 
 MEMORIA_DE_DADOS: RAM16 PORT MAP(/*CLOCK*/, read_or_write /* 0 = store, 1 = load */, resUla, reg2, dadoLido);
 
-MULTIPLEXADOR_2: mux_2 PORT MAP(dadoLido, resUla, MemParaReg, resMux_2)
-	
+MULTIPLEXADOR_2: mux1 PORT MAP(dadoLido, resUla, MemParaReg, resMux_2);
+
+AND_desvio: AND_1 PORT MAP(DesvioCondicional, sinal_zero, faz_desvio);
+
+MULTIPLEXADOR_3: mux1 PORT MAP(enderecoMais2, extendedSignal, faz_desvio, proxEnderecoIn);
+
 END BEHAVIOUR;
